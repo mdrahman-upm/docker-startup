@@ -7,7 +7,7 @@ before_install:
   - docker build -t mdrahman-upm/docker-startup -f Dockerfile.dev .
 
 script:
-  - docker run mdrahman-upm/docker-startup npm run test -- --coverage
+  - docker run mdrahman-upm/docker-startup npm run test -- --coverage --watchAll=false
 
 deploy:
   provider: elasticbeanstalk
