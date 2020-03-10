@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t mdrahman-upm/docker-startup -f Dockerfile.dev .
+
+script:
+  - docker run mdrahman-upm/docker-startup npm run test -- --coverage
